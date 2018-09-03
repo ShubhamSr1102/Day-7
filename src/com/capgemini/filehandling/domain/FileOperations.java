@@ -33,12 +33,9 @@ public class FileOperations {
 		try (PrintWriter printWriter = new PrintWriter(file2)) {
 			System.out.println(stack.size());
 			int size = stack.size();
-			
-			
-			for (int i = 0; i < size; i++) {
+				for (int i = 0; i < size; i++) {
 				printWriter.print(stack.pop());
 			}
-			
 			return true;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
