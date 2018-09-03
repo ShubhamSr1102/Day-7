@@ -12,17 +12,17 @@ import java.util.Stack;
 
 public class FileOperations {
 	
-	public static boolean reverse(String fileLink1, String fileLink2) {
-		File file1 = new File(fileLink1);
-		File file2 = new File(fileLink2);
+	public static boolean reverse(String firstFile, String secondFile) {
+		File file1 = new File(firstFile);
+		File file2 = new File(secondFile);
 		Stack<Character> stack = new Stack<>();
 		try (BufferedReader bufferReader = new BufferedReader(new FileReader(file1))) {
-			String lines;
-			while ((lines = bufferReader.readLine()) != null) {
+			String line;
+			while ((line = bufferReader.readLine()) != null) {
 				
-				for (int i = 0; i < lines.length(); i++) {
-					stack.push(lines.charAt(i));
-					System.out.print(lines.charAt(i));
+				for (int i = 0; i < line.length(); i++) {
+					stack.push(line.charAt(i));
+					System.out.print(line.charAt(i));
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -47,16 +47,16 @@ public class FileOperations {
 		return false;
 	}
 
-	public static boolean convert(String fileLink1, String fileLink2) {
-		File file1 = new File(fileLink1);
-		File file2 = new File(fileLink2);
+	public static boolean convert(String firstFile, String secondFile) {
+		File file1 = new File(firstFile);
+		File file2 = new File(secondFile);
 		LinkedList<Character> queue = new LinkedList<Character>();
 		try (FileReader fileReader = new FileReader(file1);
 				BufferedReader bufferReader = new BufferedReader(fileReader)) {
-			String lines;
-			while ((lines = bufferReader.readLine()) != null) {
-				for (int i = 0; i < lines.length(); i++) {
-					queue.add(lines.charAt(i));
+			String line;
+			while ((line = bufferReader.readLine()) != null) {
+				for (int i = 0; i < line.length(); i++) {
+					queue.add(line.charAt(i));
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -81,17 +81,17 @@ public class FileOperations {
 		return false;
 	}
 
-	public static boolean compare(String fileLink1, String fileLink2) {
-		File file1 = new File(fileLink1);
-		File file2 = new File(fileLink2);
+	public static boolean compare(String firstFile, String secondFile) {
+		File file1 = new File(firstFile);
+		File file2 = new File(secondFile);
 		LinkedList<Character> queue1 = new LinkedList<Character>();
 		LinkedList<Character> queue2 = new LinkedList<Character>();
 		try (FileReader fileReader = new FileReader(file1);
 				BufferedReader bufferReader = new BufferedReader(fileReader)) {
-			String lines;
-			while ((lines = bufferReader.readLine()) != null) {
-				for (int i = 0; i < lines.length(); i++) {
-					queue1.add(lines.charAt(i));
+			String line;
+			while ((line = bufferReader.readLine()) != null) {
+				for (int i = 0; i < line.length(); i++) {
+					queue1.add(line.charAt(i));
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -101,10 +101,10 @@ public class FileOperations {
 		}
 		try (FileReader fileReader = new FileReader(file2);
 				BufferedReader bufferReader = new BufferedReader(fileReader)) {
-			String lines;
-			while ((lines = bufferReader.readLine()) != null) {
-				for (int i = 0; i < lines.length(); i++) {
-					queue2.add(lines.charAt(i));
+			String line;
+			while ((line = bufferReader.readLine()) != null) {
+				for (int i = 0; i < line.length(); i++) {
+					queue2.add(line.charAt(i));
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -112,8 +112,8 @@ public class FileOperations {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		int size1 = queue1.size();
-		int size2 = queue2.size();
+		int sizeOfFirstFile = queue1.size();
+		int sizeOfSecondFile = queue2.size();
 		if (queue1.equals(queue2)) {
 			System.out.println("Same");
 			return true;
