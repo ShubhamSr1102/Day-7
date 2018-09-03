@@ -13,10 +13,10 @@ class VowelsAndConsonantsTest {
 
 	@Test
 	void testVowelsAndConsonants() throws IOException {
-		File file = new File(
-				"C:\\\\Shubham Srivastava\\\\WorkSpace\\\\WordCountTest.txt");
+		File file = new File("C:\\\\Shubham Srivastava\\\\WorkSpace\\\\WordCountTest.txt");
 
-		assertEquals("Number of vowels = 53\nNumber of consonants = 85", VowelsAndConsonants.findVowelAndConsonant(file));
+		assertEquals("Number of vowels = 53\nNumber of consonants = 85",
+				VowelsAndConsonants.findVowelAndConsonant(file));
 	}
 
 }

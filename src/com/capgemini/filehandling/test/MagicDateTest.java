@@ -12,8 +12,8 @@ class MagicDateTest {
 
 	@Test
 	void testCheckIfMagicDate() {
-		MagicDate date1 = new MagicDate();
-		assertEquals("Magic", date1.checkIfMagicDate(LocalDate.of(30, 6, 5)));
+		MagicDate date = new MagicDate();
+		assertEquals("Magic", date.checkIfMagicDate(LocalDate.of(30, 6, 5)));
 	}
 
 }

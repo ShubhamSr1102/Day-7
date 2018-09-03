@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashSet;
 
-
 public class VowelsAndConsonants {
 
 	public static String findVowelAndConsonant(File file) throws IOException {
@@ -23,23 +22,20 @@ public class VowelsAndConsonants {
 		vowels.add('u');
 		int vowelsCount = 0;
 		int consonantCount = 0;
-		try (BufferedReader reader = new BufferedReader( new FileReader(file))) {
-			String s=null;
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+			String s = null;
 			while ((s = reader.readLine()) != null) {
-				for(int i = 0;i < s.length(); i++)
-				{
-					if(vowels.contains(s.charAt(i))) 
-					{
+				for (int i = 0; i < s.length(); i++) {
+					if (vowels.contains(s.charAt(i))) {
 						vowelsCount++;
-					}
-					else if((s.charAt(i) >='A' && s.charAt(i) <= 'Z') || (s.charAt(i) >='a' && s.charAt(i) <= 'z')  )
+					} else if ((s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') || (s.charAt(i) >= 'a' && s.charAt(i) <= 'z'))
 						consonantCount++;
-					else
-					{}
+					else {
+					}
 				}
 			}
-		return "Number of vowels = " + vowelsCount + "\nNumber of consonants = " + consonantCount;
-	}
+			return "Number of vowels = " + vowelsCount + "\nNumber of consonants = " + consonantCount;
+		}
 
-}
+	}
 }

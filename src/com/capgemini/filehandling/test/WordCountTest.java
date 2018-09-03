@@ -12,8 +12,7 @@ class WordCountTest {
 
 	@Test
 	void testWordCount() {
-		File file = new File(
-				"C:\\Shubham Srivastava\\WorkSpace\\WordCountTest.txt");
+		File file = new File("C:\\Shubham Srivastava\\WorkSpace\\WordCountTest.txt");
 
 		assertEquals(33, WordCount.countWords(file));
 	}

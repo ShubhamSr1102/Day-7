@@ -9,15 +9,13 @@ public class WordCount {
 
 	public static int countWords(File file) {
 		int count = 0;
-		try (BufferedReader reader = new BufferedReader( new FileReader(file))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 
-			String s=null;
-			while ((s = reader.readLine()) != null) {
-				int ct=1;
-				for(int i = 0; i < s.length();i++)
-				{
-					if(s.charAt(i)==' ')
-					{
+			String tempLine = null;
+			while ((tempLine = reader.readLine()) != null) {
+				int ct = 1;
+				for (int i = 0; i < tempLine.length(); i++) {
+					if (tempLine.charAt(i) == ' ') {
 						ct++;
 					}
 				}

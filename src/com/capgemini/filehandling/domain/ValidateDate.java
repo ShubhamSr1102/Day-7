@@ -30,28 +30,22 @@ public class ValidateDate {
 
 	public static String validate(String string, int days) throws Exception {
 
-		String n = "" + string.charAt(3) + string.charAt(4);
-		int mm = Integer.parseInt(n);
-		String m = "" + string.charAt(0) + string.charAt(1);
-		int dd = Integer.parseInt(m);
-		String o = "" + string.substring(6);
-		int yy = Integer.parseInt(o);
+		String monthNumber = "" + string.charAt(3) + string.charAt(4);
+		int month = Integer.parseInt(monthNumber);
+		String dateNumber = "" + string.charAt(0) + string.charAt(1);
+		int date = Integer.parseInt(dateNumber);
+		String yearNumber = "" + string.substring(6);
+		int year = Integer.parseInt(yearNumber);
 
-		if (MyDate(dd, mm, yy)) {
-			// Date date=new SimpleDateFormat("dd/MM/yyyy").parse(string);
-
-			LocalDate d2 = (LocalDate.of(yy, mm, dd).plusDays(days));
+		if (MyDate(date, month, year)) {
+			LocalDate d2 = (LocalDate.of(year, month, date).plusDays(days));
 
 			String str = "" + d2;
 			return str.substring(8) + "/" + str.substring(5, 7) + "/" + str.substring(0, 4);
-			// return ""+d2;
+
 		}
-
-		// TODO Auto-generated method stub
-
 		return "Error";
 
 	}
 
 }
-

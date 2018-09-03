@@ -15,40 +15,34 @@ class RandomIntegerTest {
 	@Test
 	void testRandomNumber() {
 		Random rand = new Random();
-		File file = new File("C:\\Shubham Srivastava\\WorkSpace\\test.txt");{
-		
-		try(PrintWriter print = new PrintWriter(file))
+		File file = new File("C:\\Shubham Srivastava\\WorkSpace\\test.txt");
 		{
-			// Random rand = new Random();
-			for (int i = 0; i < 100; i++) {
 
-				print.println(rand.nextInt(50) + 1);
-				System.out.println(i);
-			}
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+			try (PrintWriter print = new PrintWriter(file)) {
+				for (int i = 0; i < 100; i++) {
 
-		TreeSet<Integer> treeset = new TreeSet<>();try(
-		FileReader reader = new FileReader(file);
-		BufferedReader br = new BufferedReader(reader))
-		{
-			String line;
-			while ((line = br.readLine()) != null) {
-				treeset.add(Integer.parseInt(line));
-			}
-			for (Integer integer : treeset) {
-				System.out.println(integer);
+					print.println(rand.nextInt(50) + 1);
+				}
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 
-		}catch(
-		Exception e)
-		{
+			TreeSet<Integer> treeset = new TreeSet<>();
+			try (FileReader reader = new FileReader(file); BufferedReader br = new BufferedReader(reader)) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					treeset.add(Integer.parseInt(line));
+				}
+				for (Integer integer : treeset) {
+					System.out.println(integer);
+				}
+
+			} catch (Exception e) {
+
+			}
 
 		}
-
-	}}
-
+	}
 
 }

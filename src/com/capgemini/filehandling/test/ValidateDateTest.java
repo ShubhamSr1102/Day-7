@@ -11,8 +11,7 @@ class ValidateDateTest {
 	@Test
 	void testValidateDate() throws Exception {
 
-		assertEquals("04/06/1997", ValidateDate.validate("02/06/1997",2));
+		assertEquals("04/06/1997", ValidateDate.validate("02/06/1997", 2));
 	}
-
 
 }

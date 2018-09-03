@@ -9,17 +9,17 @@ public class LineCount {
 
 	public static int count(File file) {
 
-		int ct = 0;
+		int count = 0;
 		try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader);) {
 
 			String s;
 			while ((s = reader.readLine()) != null)
-				ct++;
+				count++;
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		return ct;
+		return count;
 	}
 }

@@ -30,16 +30,16 @@ class MyDateTest {
 		array.add(d4);
 		array.add(d5);
 
-		FileOutputStream fos = new FileOutputStream("C:\\Shubham Srivastava\\WorkSpace\\objects.ser");
-		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(array);
+		FileOutputStream fileoutputstream = new FileOutputStream("C:\\Shubham Srivastava\\WorkSpace\\objects.ser");
+		ObjectOutputStream objectoutputstream = new ObjectOutputStream(fileoutputstream);
+		objectoutputstream.writeObject(array);
 
-		FileInputStream fis = new FileInputStream("C:\\Shubham Srivastava\\WorkSpace\\objects.ser");
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		ArrayList<MyDate> array1 = (ArrayList<MyDate>) ois.readObject();
-		ois.close();
-		assertEquals(1, array1.get(0).a);
-		assertEquals("Shubham", array1.get(2).name);
+		FileInputStream fileinputstream = new FileInputStream("C:\\Shubham Srivastava\\WorkSpace\\objects.ser");
+		ObjectInputStream objectinputstream = new ObjectInputStream(fileinputstream);
+		ArrayList<MyDate> readArray = (ArrayList<MyDate>) objectinputstream.readObject();
+		objectinputstream.close();
+		assertEquals(1, readArray.get(0).a);
+		assertEquals("Shubham", readArray.get(2).name);
 
 	}
 

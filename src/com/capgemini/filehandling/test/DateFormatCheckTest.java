@@ -12,21 +12,19 @@ class DateFormatCheckTest {
 	@Test
 	void testbasic() {
 
-		//Date d1 = new Date(19970602);
-		String date="02061997";
+		// Date d1 = new Date(19970602);
+		String date = "02061997";
 		assertEquals("02/06/1997", DateFormatCheck.convert1(date));
-		
+
 	}
-	
+
 	@Test
 	void testformat() {
 
-		//Date d1 = new Date(19970602);
-		String date="02061997";
+		// Date d1 = new Date(19970602);
+		String date = "02061997";
 		assertEquals("02 jun,1997", DateFormatCheck.convert2(date));
-		
-	}
 
 	}
 
-
+}
